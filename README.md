@@ -14,6 +14,9 @@ Javascriptファイルの圧縮
 ・watch
 ファイルの監視
 
+・server
+LiveReload環境
+
 
 ## Demo
 
