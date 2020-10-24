@@ -13,6 +13,7 @@
     "gulp": "^4.0.2",
     "gulp-sass": "^4.1.0",
     "gulp-uglify": "^3.0.2",
+    "require-dir": "^1.2.0",
     "sass": "^1.27.0"
   }
 }

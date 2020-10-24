@@ -1,0 +1,17 @@
+{
+  "root": {
+    "src": "./src",
+    "dest": "./public"
+  },
+
+  "tasks": {
+    "sass": {
+      "sassOptions": {
+        "outputStyle": "expanded"
+      }
+    },
+    "server": {
+      "baseDir": "./public"
+    }
+  }
+}
