@@ -1,5 +1,5 @@
-(function() {
-  window.addEventListener('load', function() {
-      alert('loaded');
- });
+(function () {
+    window.addEventListener('load', function () {
+        alert('loaded');
+    });
 })();

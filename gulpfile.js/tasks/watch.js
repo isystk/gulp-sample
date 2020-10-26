@@ -1,12 +1,12 @@
 var gulp = require("gulp");
-var config = require('../config.json');
+var config = require('../config');
 
 //変更を監視
 gulp.task("watch", () => {
-  gulp.watch(config.root.src + "/sass/**/*scss",  
+  gulp.watch(config.tasks.sass.src,  
     gulp.parallel("sass")
   );
-  gulp.watch(config.root.src + "/js/**/*.js",  
-    gulp.parallel("uglify")
+  gulp.watch(config.tasks.ts.src,  
+    gulp.parallel("tsc")
   );
 })
