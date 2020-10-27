@@ -1,1 +1,1 @@
-window.addEventListener("load",function(){alert("loaded")});
+window.addEventListener("load",function(){alert("Hello, Ise Yoshitaka")});

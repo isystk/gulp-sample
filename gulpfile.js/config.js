@@ -16,13 +16,7 @@ module.exports = {
     },
     ts: {
       src: "./src/ts/**/*.ts",
-      dest: "./src/js",
-      options: {
-        removeComments: true,
-        noImplicitAny: true,
-        noLib: false,
-        target: "ES5"
-      }
+      dest: "./src/js"
     },
     uglify: {
       dest: "./public/js",

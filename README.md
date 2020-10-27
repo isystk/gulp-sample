@@ -8,7 +8,8 @@
 ・sass
 SassをコンパイルしてCssを生成する
 
-・js
+・tcs
+Typescriptのコンパイル
 Javascriptファイルの圧縮
 
 ・watch
