@@ -26,33 +26,36 @@ gulp.task('tsc', () => {
     .pipe(ts(tsProject()))
     // BabelでES6(ES2005)→ES5系に変換
     .pipe(babel())
-    // ファイル圧縮
-    .pipe(uglify(config.tasks.uglify.options))
     .pipe(sourcemaps.write('.')) /* ソースマップを出力させる場合 */
     .pipe(gulp.dest(config.tasks.ts.dest));
 });
 
-gulp.task('concat', (done) => {
+gulp.task('concat', () => {
   console.log('JSファイルを統合します。');
-  gulp.src(['src/js/file1.js', 'src/js/file2.js'])
-    .pipe(concat('main.js'))
+  return gulp.src(['src/js/**/*.js'])
+    .pipe(concat('bundle.js'))
     .pipe(gulp.dest(config.tasks.concat.dest));
-  done();
 });
 
-gulp.task('browserify', (done) => {
+gulp.task('browserify', () => {
   // babelifyでimport/export をブラウザで利用できるように変換
-  browserify({
-        entries: 'src/js/main.js'
+  return browserify({
+        entries: 'src/js/bundle.js'
     })
     .transform(babelify)
     .bundle()
     .pipe(source('main.js'))
     .pipe(gulp.dest(config.tasks.browserify.dest));
-  done();
 });
 
-gulp.task('javascript', gulp.series('clean', 'tsc', 'concat', 'browserify', (done) => {
+gulp.task('compress', () => {
+    // ファイル圧縮
+    return gulp.src('./public/js/**/*.js')
+        .pipe(uglify(config.tasks.uglify.options))
+        .pipe(gulp.dest('./public/js/'));
+});
+
+gulp.task('javascript', gulp.series('clean', 'tsc', 'concat', 'browserify', 'compress', (done) => {
   console.log('リロード');
   browser.reload();
   done();

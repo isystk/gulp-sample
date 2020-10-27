@@ -11,10 +11,10 @@ SassをコンパイルしてCssを生成する
 ・javascript
 Typescriptのコンパイル
 BabelでES6(ES2005)→ES5系に変換
-ファイル圧縮
 ソースマップを出力
 JSファイルの統合
 babelifyでimport/export をブラウザで利用できるように変換
+ファイル圧縮
 
 ・watch
 ファイルの監視

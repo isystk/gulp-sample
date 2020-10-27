@@ -16,3 +16,4 @@ function () {
 }();
 
 exports.Hello = Hello;
+//# sourceMappingURL=file1.js.map

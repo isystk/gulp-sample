@@ -9,3 +9,5 @@ export class Hello implements IHello{
      return "Hello "+name;
    }
 }
+
+
