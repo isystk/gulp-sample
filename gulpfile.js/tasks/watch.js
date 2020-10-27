@@ -2,11 +2,12 @@ var gulp = require("gulp");
 var config = require('../config');
 
 //変更を監視
-gulp.task("watch", () => {
+gulp.task("watch", (done) => {
   gulp.watch(config.tasks.sass.src,  
-    gulp.parallel("sass")
+    gulp.series("sass")
   );
   gulp.watch(config.tasks.ts.src,  
-    gulp.parallel("tsc")
+    gulp.series("javascript")
   );
+  done();
 })

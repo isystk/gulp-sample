@@ -19,7 +19,6 @@ module.exports = {
       dest: "./src/js"
     },
     uglify: {
-      dest: "./public/js",
       options: {
         compress: true, 
         mangle: true, 
@@ -27,8 +26,13 @@ module.exports = {
           beautify: false 
         }
       }
+    },
+    concat: {
+      dest: "./src/js"
+    },
+    browserify: {
+      dest: "./public/js"
     }
-
   }
 };
 
